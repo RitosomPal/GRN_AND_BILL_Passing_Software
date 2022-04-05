@@ -511,7 +511,7 @@
 <script src="./assets/js/grn.js"></script>
 <script>
     $(document).ready(function () {
-        $("#example1").DataTable();
+        $("#example1").DataTable({"lengthMenu": [ [-1, 10, 25, 50, 75, 100], ["All", 10, 25, 50, 75, 100] ]});
 
         $('.viewModal').click(async function() {
             $('#view_book').val($(this).data('book'));

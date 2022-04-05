@@ -531,7 +531,9 @@
 <script src="./assets/js/bpm.js"></script>
 <script>
   $(function () {
-    $("#example1").DataTable();
+    $("#example1").DataTable({
+      "lengthMenu": [ [-1, 10, 25, 50, 75, 100], ["All", 10, 25, 50, 75, 100] ]
+    });
     $('#reservation').daterangepicker({
         locale: {
             format: 'DD/MM/YYYY'
@@ -597,7 +599,7 @@
             <td id="qr${c}">${l.qtyRec}</td>
             <td>${l.unit}</td>
             <td>${l.qtyRecDate}</td>
-            <td><input class="form-control qb" id="qb${c}" type="number" step="any" name="qb[${c}]" value="${l.billedQty}" min="0" max="${parseInt(l.qtyRec)}" class="form-control"></td>
+            <td><input class="form-control qb" id="qb${c}" type="number" step="any" name="qb[${c}]" value="${l.billedQty}" min="0" max="${parseFloat(l.qtyRec)}" class="form-control"></td>
             <td>
               <div class="form-check pt-2">
                 <input class="form-check-input" id="cb${c}" name="id[${c++}]" value="${l.grnlistId}" type="checkbox" checked>
@@ -619,7 +621,7 @@
               <td id="qr${c}">${l.qtyRec}</td>
               <td>${l.unitName}</td>
               <td>${l.date}</td>
-              <td><input class="form-control qb" id="qb${c}" type="number" step="any" name="qb[${c}]" min="0" max="${parseInt(l.qtyRec)}" class="form-control"></td>
+              <td><input class="form-control qb" id="qb${c}" type="number" step="any" name="qb[${c}]" min="0" max="${parseFloat(l.qtyRec)}" class="form-control"></td>
               <td>
                 <div class="form-check pt-2">
                   <input class="form-check-input" id="cb${c}" name="id[${c++}]" value="${l.grnListId}" type="checkbox">
